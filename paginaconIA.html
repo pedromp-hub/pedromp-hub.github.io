@@ -1,91 +1,101 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MotoHub - Encuentra tu moto</title>
-    <style>
-      :root{--accent:#ff6a00;--max:1200px;font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial}
-      *{box-sizing:border-box}
-      html,body{height:100%;margin:0;color:#fff}
-
-      /* Fondo global SVG creado */
-      body{
-        background-image: url('assets/bg-moto.svg');
-        background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed;
-      }
-
-      header{position:fixed;left:0;right:0;top:0;z-index:40;padding:14px 20px;background:linear-gradient(to bottom, rgba(0,0,0,0.24), rgba(0,0,0,0.06));backdrop-filter:blur(6px)}
-      .nav-wrap{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-      .brand{font-weight:800;letter-spacing:0.4px}
-      nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
-      nav a{color:inherit;text-decoration:none;padding:8px 10px;border-radius:8px}
-      nav a:hover{background:rgba(255,255,255,0.04)}
-      .cta-sm{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;font-weight:700}
-
-      /* Hero fullscreen */
-      .hero{min-height:100vh;display:grid;align-items:center;justify-items:center;text-align:center;padding:0 20px}
-      .hero-inner{max-width:1000px}
-      h1{font-size:clamp(2rem,6vw,4rem);margin:0 0 12px}
-      p.lead{color:rgba(255,255,255,0.9);margin:0 auto 20px;max-width:760px}
-      .cta{display:inline-block;background:var(--accent);color:#fff;padding:14px 22px;border-radius:12px;font-weight:800;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.35)}
-
-      /* Responsive */
-      .hamburger{display:none}
-      @media (max-width:880px){
-        nav ul{display:none;position:absolute;right:20px;top:64px;background:rgba(0,0,0,0.6);padding:12px;border-radius:8px;flex-direction:column}
-        .hamburger{display:block;width:26px;height:18px;cursor:pointer}
-        .hamburger span{display:block;height:2px;background:#fff;margin:5px 0}
-        .hero{padding-top:80px}
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="nav-wrap">
-        <div class="brand">MotoHub</div>
-        <nav aria-label="Menú principal">
-          <div class="hamburger" id="hamburger" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </div>
-          <ul id="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#modelos">Modelos</a></li>
-            <li><a href="#ofertas">Ofertas</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a class="cta-sm" href="#comprar">Comprar</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero" role="region" aria-label="Portada principal">
-        <div class="hero-inner">
-          <h1>Descubre la moto que te llevará más lejos</h1>
-          <p class="lead">Inspirado en rutas abiertas y fotos reales, nuestra selección une potencia, estilo y seguridad. Explora, compara y elige tu próxima moto.</p>
-          <a class="cta" href="#modelos">Explorar modelos</a>
-        </div>
-      </section>
-    </main>
-
-    <script>
-      (function(){
-        const burger = document.getElementById('hamburger');
-        const menu = document.getElementById('menu');
-        if(!burger || !menu) return;
-        burger.addEventListener('click', ()=>{
-          menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
-        });
-      })();
-    </script>
-  </body>
-</html>
-
-<!doctype html>
-<html lang="es">
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>MotoHub - Encuentra tu moto</title>
+		<style>
+			:root{--accent:#ff6a00;--max:1200px;font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial}
+			*{box-sizing:border-box}
+			html,body{height:100%;margin:0;color:#fff}
+
+			/* Fondo global SVG alternativo */
+			body{
+				background-image: url('assets/bg-moto-2.svg');
+				background-size:cover;background-position:center center;background-repeat:no-repeat;background-attachment:fixed;
+			}
+
+			header{position:fixed;left:0;right:0;top:0;z-index:40;padding:14px 20px;background:linear-gradient(to bottom, rgba(0,0,0,0.24), rgba(0,0,0,0.06));backdrop-filter:blur(6px)}
+			.nav-wrap{max-width:var(--max);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+			.brand{font-weight:800;letter-spacing:0.4px}
+			nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+			nav a{color:inherit;text-decoration:none;padding:8px 10px;border-radius:8px}
+			nav a:hover{background:rgba(255,255,255,0.04)}
+			.cta-sm{background:var(--accent);color:#fff;padding:8px 12px;border-radius:8px;font-weight:700}
+
+			/* Hero fullscreen */
+			.hero{min-height:100vh;display:flex;align-items:center;padding:0 20px}
+			.hero-inner{max-width:980px}
+			.hero-grid{display:grid;grid-template-columns:1fr 420px;align-items:center;gap:28px;width:100%;max-width:1200px;margin:0 auto}
+			.hero-left{text-align:left}
+			h1{font-size:clamp(1.8rem,4.6vw,3.4rem);margin:0 0 12px}
+			p.lead{color:rgba(255,255,255,0.92);margin:0 0 20px;font-size:1.05rem}
+			.cta{display:inline-block;background:var(--accent);color:#fff;padding:14px 22px;border-radius:12px;font-weight:800;text-decoration:none;box-shadow:0 12px 30px rgba(0,0,0,0.35);width:100%;text-align:center}
+			.panel-cta{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));padding:28px;border-radius:14px}
+
+			/* Responsive */
+			.hamburger{display:none}
+			@media (max-width:880px){
+				nav ul{display:none;position:absolute;right:20px;top:64px;background:rgba(0,0,0,0.6);padding:12px;border-radius:8px;flex-direction:column}
+				.hamburger{display:block;width:26px;height:18px;cursor:pointer}
+				.hamburger span{display:block;height:2px;background:#fff;margin:5px 0}
+				.hero{padding-top:80px}
+				.hero-grid{grid-template-columns:1fr}
+				.panel-cta{order:2;margin-top:18px}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="nav-wrap">
+				<div class="brand">MotoHub</div>
+				<nav aria-label="Menú principal">
+					<div class="hamburger" id="hamburger" aria-hidden="true">
+						<span></span><span></span><span></span>
+					</div>
+					<ul id="menu">
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#modelos">Modelos</a></li>
+						<li><a href="#ofertas">Ofertas</a></li>
+						<li><a href="#contacto">Contacto</a></li>
+						<li><a class="cta-sm" href="#comprar">Comprar</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero" role="region" aria-label="Portada principal">
+				<div class="hero-inner">
+					<div class="hero-grid">
+						<div class="hero-left">
+							<h1>Descubre la moto que te llevará más lejos</h1>
+							<p class="lead">Inspirado en rutas abiertas y fotografías reales, nuestra selección une potencia, estilo y seguridad. Explora, compara y elige tu próxima moto.</p>
+							<a class="cta" href="#modelos" style="display:inline-block;width:auto">Ver modelos</a>
+						</div>
+						<div class="panel-cta" aria-hidden="false">
+							<h3 style="margin:0 0 12px">¿Listo para rodar?</h3>
+							<p style="margin:0 0 18px;color:rgba(255,255,255,0.86)">Agenda una prueba o recibe asesoría gratuita.</p>
+							<a class="cta" href="#contacto">Contactar ahora</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<script>
+			(function(){
+				const burger = document.getElementById('hamburger');
+				const menu = document.getElementById('menu');
+				if(!burger || !menu) return;
+				burger.addEventListener('click', ()=>{
+					menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+				});
+			})();
+		</script>
+	</body>
+</html>
+
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Página con IA - Motos</title>
 		<style>
