@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ilustración SVG original: moto estilizada para uso como fondo hero -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ff6a00"/>
+      <stop offset="100%" stop-color="#ff3d00"/>
+    </linearGradient>
+    <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="40" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- fondo oscuro sutil -->
+  <rect width="100%" height="100%" fill="url(#g1)" />
+
+  <!-- reflejo naranja en la parte superior derecha -->
+  <g transform="translate(900,120) rotate(-12)">
+    <ellipse cx="0" cy="0" rx="740" ry="260" fill="url(#g2)" opacity="0.12"/>
+  </g>
+
+  <!-- silueta estilizada de moto centrada -->
+  <g transform="translate(160,330) scale(1.6)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="6">
+    <!-- ruedas -->
+    <circle cx="220" cy="220" r="80" stroke="#d1d5db" stroke-width="10" fill="rgba(0,0,0,0.15)" />
+    <circle cx="740" cy="220" r="80" stroke="#d1d5db" stroke-width="10" fill="rgba(0,0,0,0.15)" />
+
+    <!-- chasis simplificado -->
+    <path d="M120 220 C220 120, 460 120, 560 220" stroke="#fff" stroke-width="10" fill="none"/>
+    <path d="M560 220 L640 160 L720 160 L770 120" stroke="#fff" stroke-width="10" fill="none"/>
+
+    <!-- asiento y tanque -->
+    <path d="M360 120 C400 90, 500 90, 540 120 C560 140, 520 160, 490 160 L420 160 C380 160, 360 140, 360 120 Z" fill="#111827" opacity="0.85"/>
+    <path d="M360 120 C400 90, 500 90, 540 120" stroke="#ff6a00" stroke-width="6" fill="none"/>
+
+    <!-- manillar -->
+    <path d="M720 160 L760 120" stroke="#fff" stroke-width="8"/>
+
+    <!-- detalles decorativos (líneas rápidas) -->
+    <path d="M180 120 L240 100" stroke="#9ca3af" stroke-width="4" opacity="0.9"/>
+    <path d="M280 80 L340 60" stroke="#9ca3af" stroke-width="4" opacity="0.7"/>
+  </g>
+
+  <!-- elemento grande con sombra para sensación de profundidad -->
+  <g transform="translate(200,620) scale(1.4)" filter="url(#f1)">
+    <rect x="0" y="0" width="1200" height="220" rx="40" fill="rgba(255,255,255,0.02)"/>
+  </g>
+
+</svg>
