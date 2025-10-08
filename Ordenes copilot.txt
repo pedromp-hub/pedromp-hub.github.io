@@ -1,0 +1,3 @@
+1. Créame una cabecera con un menú, imagen de fondo sobre motos que encuentres y con un call to action.
+2. Cámbiame la foto a la siguiente https://wallpapers.com/images/hd/bikes-4k-trdwa9zqtv1ifav5.jpg
+3. La cabecera que sea transparente no difuminada.
