@@ -3,7 +3,7 @@
   <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Compra tu moto</title>
+	<title>MotoRenova</title>
 	<style>
 	  :root{--accent:#ff5a1a;font-family:system-ui, -apple-system, 'Segoe UI', Roboto, Arial}
 	  *{box-sizing:border-box}
@@ -22,9 +22,11 @@
 	  header{
 		position:fixed;left:0;right:0;top:0;z-index:50;padding:12px 20px;background:transparent;
 	  }
-	  .nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+		.nav{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 	  .brand{font-weight:800;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
-	  nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+		nav{display:flex;align-items:center}
+		nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center;flex:1}
+		nav ul li:last-child{margin-left:auto}
 	  nav a{color:#fff;text-decoration:none;padding:8px 10px;border-radius:8px;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
 	  .btn-cta{background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
 
@@ -42,23 +44,23 @@
   <body>
 	<header>
 	  <div class="nav">
-		<div class="brand">MotoSite</div>
-		<nav aria-label="menú principal">
-		  <ul>
-			<li><a href="#">Inicio</a></li>
-			<li><a href="#modelos">Modelos</a></li>
-			<li><a href="#blog">Blog</a></li>
-			<li><a class="btn-cta" href="#contacto">Comprar</a></li>
-		  </ul>
-		</nav>
+		<div class="brand">MotoRenova</div>
+				<nav aria-label="menú principal">
+					<ul>
+						<li><a href="#tipos">Tipos de motos</a></li>
+						<li><a href="#sobre">Sobre nosotros</a></li>
+						<li><a href="#contacto">Contáctanos</a></li>
+						<li><a class="btn-cta" href="#">Inicio</a></li>
+					</ul>
+				</nav>
 	  </div>
 	</header>
 
 	<main>
 	  <section class="hero" role="region" aria-label="portada principal">
 		<div class="hero-content">
-		  <h1>Vive la ruta: motos para cada aventura</h1>
-		  <p class="lead">Explora nuestra selección de motos: potencia, diseño y seguridad en un solo lugar. Encuentra la que mejor se adapta a tu estilo.</p>
+		  <h1>Encuentra la moto perfecta, sin sorpresas</h1>
+		  <p class="lead">"Descubre una amplia selección de motos de segunda mano, revisadas y certificadas para que compres con total confianza. Encuentra la moto ideal que se ajuste a tu estilo y presupuesto."</p>
 		  <a class="btn-cta" href="#modelos">Ver modelos</a>
 		</div>
 	  </section>
