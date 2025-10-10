@@ -39,6 +39,23 @@
 		nav ul{display:none}
 		.hero{padding-top:80px}
 	  }
+
+			/* Subscribe section */
+			.subscribe-wrap{padding:48px 20px;background:linear-gradient(to top, rgba(0,0,0,0.55), rgba(0,0,0,0.28));display:flex;justify-content:center}
+			.subscribe{max-width:900px;background:rgba(255,255,255,0.03);padding:28px;border-radius:12px;text-align:center}
+			.subscribe input[type="email"]{padding:12px 14px;border-radius:8px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.02);color:#fff;margin-right:10px;min-width:260px}
+			.subscribe button.btn-cta{padding:10px 16px}
+
+
+			/* Dropdown estilos */
+			.dropdown{position:relative}
+			.dropdown-button{background:transparent;border:none;color:#fff;padding:8px 10px;border-radius:6px;cursor:pointer;font:inherit;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+			.dropdown-button:focus{outline:2px solid rgba(255,90,26,0.22);outline-offset:3px}
+			.dropdown-menu{position:absolute;top:calc(100% + 8px);left:0;min-width:160px;background:rgba(0,0,0,0.88);border-radius:8px;padding:8px 0;box-shadow:0 12px 30px rgba(0,0,0,0.45);display:none;z-index:60}
+			.dropdown-menu li{list-style:none}
+			.dropdown-menu a{display:block;padding:8px 14px;color:#fff;text-decoration:none}
+			.dropdown-menu a:hover{background:rgba(255,255,255,0.04)}
+			.dropdown.open .dropdown-menu{display:block}
 	</style>
   </head>
   <body>
@@ -47,7 +64,16 @@
 		<div class="brand">MotoRenova</div>
 				<nav aria-label="menú principal">
 					<ul>
-						<li><a href="#tipos">Tipos de motos</a></li>
+					<li class="dropdown">
+					  <button class="dropdown-button" aria-haspopup="true" aria-expanded="false" id="tiposButton">Tipos de motos ▾</button>
+					  <ul class="dropdown-menu" role="menu" aria-labelledby="tiposButton">
+						<li role="none"><a role="menuitem" href="#trail">Trail</a></li>
+						<li role="none"><a role="menuitem" href="#naked">Naked</a></li>
+						<li role="none"><a role="menuitem" href="#deportiva">Deportiva</a></li>
+						<li role="none"><a role="menuitem" href="#supermotard">Supermotard</a></li>
+						<li role="none"><a role="menuitem" href="#enduro">Enduro</a></li>
+					  </ul>
+					</li>
 						<li><a href="#sobre">Sobre nosotros</a></li>
 						<li><a href="#contacto">Contáctanos</a></li>
 						<li><a class="btn-cta" href="#">Inicio</a></li>
@@ -65,5 +91,79 @@
 		</div>
 	  </section>
 	</main>
+		<!-- Sección de suscripción que aparece al bajar hasta la parte baja -->
+		<section id="ofertas" class="subscribe-wrap" aria-label="Aviso de ofertas">
+			<div class="subscribe">
+				<h2>¿Quieres recibir ofertas?</h2>
+				<p>Introduce tu correo y te avisaremos cuando tengamos novedades y ofertas.</p>
+				<form id="subscribeForm" aria-label="Formulario de suscripción">
+					<input id="subscribeEmail" type="email" name="email" placeholder="tu@correo.com" aria-label="Correo electrónico" required />
+					<button type="submit" class="btn-cta">Avisarme</button>
+				</form>
+				<p id="subscribeMessage" role="status" style="margin-top:10px;display:none"></p>
+			</div>
+		</section>
+		<script>
+			// Dropdown 'Tipos de motos'
+			(function(){
+				const dropdown = document.querySelector('.dropdown');
+				if(!dropdown) return;
+				const btn = dropdown.querySelector('.dropdown-button');
+				const menu = dropdown.querySelector('.dropdown-menu');
+
+				function open(){ dropdown.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+				function close(){ dropdown.classList.remove('open'); btn.setAttribute('aria-expanded','false'); }
+
+				btn.addEventListener('click', function(e){
+					e.stopPropagation();
+					dropdown.classList.contains('open') ? close() : open();
+				});
+
+				// click fuera
+				document.addEventListener('click', function(){ close(); });
+				// tecla Esc
+				document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape') close(); });
+			})();
+      
+				// Subscribe logic: show when near bottom, validate and save
+				(function(){
+					const wrap = document.getElementById('ofertas');
+					const form = document.getElementById('subscribeForm');
+					const emailInput = document.getElementById('subscribeEmail');
+					const msg = document.getElementById('subscribeMessage');
+					if(!wrap || !form) return;
+
+					// hide initially until scrolled near bottom
+					wrap.style.opacity = '0'; wrap.style.transform = 'translateY(12px)'; wrap.style.transition = 'opacity .5s, transform .5s';
+
+					function checkScroll(){
+						const scrolled = window.scrollY + window.innerHeight;
+						const threshold = document.body.scrollHeight - 200; // 200px from bottom
+						if(scrolled >= threshold){ wrap.style.opacity = '1'; wrap.style.transform='translateY(0)'; }
+					}
+					window.addEventListener('scroll', checkScroll);
+					// initial check
+					checkScroll();
+
+					function validEmail(e){
+						return /\S+@\S+\.\S+/.test(e);
+					}
+
+					form.addEventListener('submit', function(ev){
+						ev.preventDefault();
+						const value = emailInput.value.trim();
+						if(!validEmail(value)){
+							msg.style.display='block'; msg.style.color='#ffb4a6'; msg.textContent='Introduce un correo válido';
+							return;
+						}
+						// Simular guardado en localStorage
+						let list = JSON.parse(localStorage.getItem('suscriptores') || '[]');
+						if(!list.includes(value)) list.push(value);
+						localStorage.setItem('suscriptores', JSON.stringify(list));
+						msg.style.display='block'; msg.style.color='#9ff3c6'; msg.textContent='Gracias — te avisaremos por email.';
+						emailInput.value = '';
+					});
+				})();
+		</script>
   </body>
 </html>
