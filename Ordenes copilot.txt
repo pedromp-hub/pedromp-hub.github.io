@@ -3,3 +3,6 @@
 3. La cabecera que sea transparente no difuminada.
 4. Quiero que en la cabecera solo salgan los apartados de Incio, Tipos de motos, Sobre nosotros y contactanos.
 5. Quiero que el tipo de motos de la cabecera sea una pestaña desplegable en la que aparezcan las opciones trail, naked, deportiva, supermotard y enduro.
+6. Añademe en la pagina principal en la parte baja de ella que tenga que bajar con el raton un apartado que te de la opcion de meter tu correo electronico para avisarte de la ofertas que salgan.
+7. Cuando pinche en la parte de sobre nosotros acceda a otra pagina en la que explique quienes somos que hacemos y en la parte baja me crees un logo para mi tienda.
+8. 
