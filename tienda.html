@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Trail - MotoRenova</title>
+    <title>Tienda - MotoRenova</title>
     <style>
       :root{--accent:#ff5a1a;font-family:system-ui, -apple-system, 'Segoe UI', Roboto, Arial}
       *{box-sizing:border-box}
@@ -16,11 +16,11 @@
       a{color:inherit;text-decoration:none}
       main{max-width:1100px;margin:36px auto;padding:0 20px}
       h1{font-size:2rem;margin:0 0 8px}
-      h2{font-size:1.25rem;margin-top:18px}
       .content-wrap{background:rgba(0,0,0,0.78);padding:24px;border-radius:12px}
-      .card{background:#000;padding:18px;border-radius:10px;margin:12px 0;border:1px solid rgba(255,255,255,0.04)}
-      .logo-wrap{text-align:center;margin-top:42px;padding:28px;background:#000;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
-      .logo-wrap img{width:160px;height:auto}
+      .motos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:24px}
+      .moto-card{background:#000;padding:18px;border-radius:10px;box-shadow:0 2px 16px rgba(0,0,0,0.18);display:flex;flex-direction:column;align-items:center}
+      .moto-card img{width:100%;max-width:220px;height:140px;object-fit:cover;border-radius:8px;margin-bottom:12px}
+      .moto-card .precio{color:var(--accent);font-size:1.2rem;font-weight:700;margin-top:6px}
       footer{color:rgba(255,255,255,0.6);text-align:center;padding:24px 0}
     </style>
   </head>
@@ -35,14 +35,14 @@
               <ul class="dropdown-menu" role="menu" aria-labelledby="tiposButton" style="position:absolute;top:calc(100% + 8px);left:0;min-width:160px;background:rgba(0,0,0,0.88);border-radius:8px;padding:8px 0;box-shadow:0 12px 30px rgba(0,0,0,0.45);display:none;z-index:60">
                 <li role="none"><a role="menuitem" href="trail.html">Trail</a></li>
                 <li role="none"><a role="menuitem" href="naked.html">Naked</a></li>
-                <li role="none"><a role="menuitem" href="deportiva.html">Deportiva</a></li>
+                <li role="menuitem" href="deportiva.html">Deportiva</a></li>
                 <li role="none"><a role="menuitem" href="supermotard.html">Supermotard</a></li>
                 <li role="none"><a role="menuitem" href="enduro.html">Enduro</a></li>
               </ul>
             </li>
             <li><a href="Sobrenosotros.html">Sobre nosotros</a></li>
             <li><a href="contactanos.html">Contáctanos</a></li>
-            <li><a href="tienda.html">Tienda</a></li>
+            <li><a href="tienda.html" style="font-weight:700;color:var(--accent)">Tienda</a></li>
             <li><a class="btn-cta" href="index.html">Inicio</a></li>
           </ul>
         </nav>
@@ -67,29 +67,34 @@
     </script>
     <main>
       <div class="content-wrap">
-        <h1>Motos Trail</h1>
-        <div class="card">
-        <h2>¿Qué es una moto Trail?</h2>
-        <p>Las motos Trail están diseñadas para ofrecer versatilidad tanto en carretera como fuera de ella. Son ideales para quienes buscan aventuras y rutas mixtas, combinando comodidad, resistencia y capacidad todoterreno.</p>
-      </div>
-      <div class="card">
-        <h2>Características principales</h2>
-        <ul>
-          <li>Suspensión de largo recorrido para terrenos irregulares.</li>
-          <li>Posición de conducción erguida y cómoda.</li>
-          <li>Neumáticos mixtos para asfalto y tierra.</li>
-          <li>Gran autonomía y depósitos de combustible amplios.</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h2>¿Para quién es ideal?</h2>
-        <p>Perfecta para viajeros, aventureros y quienes disfrutan explorar caminos menos transitados sin renunciar a la comodidad en trayectos largos.</p>
-      </div>
-      <div class="logo-wrap">
-        <h2>Ejemplo de moto Trail</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Honda_Africa_Twin_XRV750T.jpg" alt="Moto Trail" style="width:220px;height:auto;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,0.45);margin-bottom:8px;" />
-        <p style="margin-top:12px;color:rgba(255,255,255,0.72)">Imagen ilustrativa de una moto trail.</p>
-      </div>
+        <h1>Tienda de motos</h1>
+        <div class="motos-grid">
+          <div class="moto-card">
+            <img src="https://imgs.search.brave.com/RBaBsuLzH4px6XN3bHWE_AB2RcmHbqkl0j0F-Pjef8U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9mYXJt/NS5zdGF0aWNmbGlj/a3IuY29tLzQyMjIv/MzUwMjU5NTIwNTJf/ODMwOGMxYzk1Mi5q/cGc" alt="Moto Trail" />
+            <div>Moto Trail Yamaha XT660</div>
+            <div class="precio">4.200 €</div>
+          </div>
+          <div class="moto-card">
+            <img src="https://imgs.search.brave.com/NnnjvZW-lVdySXmv5i7RzxesqYMwrqdKer2MsLL4Z4o/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93YWxs/cGFwZXJjYXQuY29t/L3cvZnVsbC81Lzgv/Ny8xNzQwOTYyLTE5/MjB4MTI4MC1kZXNr/dG9wLWhkLWhvbmRh/LWNiNjUwci1iYWNr/Z3JvdW5kLmpwZw" alt="Moto Naked" />
+            <div>Moto Naked Honda CB650R</div>
+            <div class="precio">5.800 €</div>
+          </div>
+          <div class="moto-card">
+            <img src="https://imgs.search.brave.com/tNCkOi7sb3AlN6REQ3GXCm8gScaSlKraBI3jzOHmNnk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMwLmhvdGNhcnNp/bWFnZXMuY29tL3dv/cmRwcmVzcy93cC1j/b250ZW50L3VwbG9h/ZHMvMjAyMi8wOS9L/YXdhc2FraS1OaW5q/YS00MDAtQUJTLVJl/dmlldy0yLmpwZz9x/PTUwJmZpdD1jcm9w/Jnc9ODI1JmRwcj0x/LjU" alt="Moto Deportiva" />
+            <div>Moto Deportiva Kawasaki Ninja 400</div>
+            <div class="precio">6.900 €</div>
+          </div>
+          <div class="moto-card">
+            <img src="https://imgs.search.brave.com/Z_C6s5ewz962sxsQyGE_ZDQh6-nYyjdqp9LcYXReGZ4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bW90b2ZpY2hhcy5j/b20vaW1hZ2VzL2Fy/dGljdWxvcy9rdG0v/NjkwLXNtYy1yLTIw/MjYva3RtLTY5MC1z/bWMtci0yMDI2LTAx/LmpwZw" alt="Moto Supermotard" />
+            <div>Moto Supermotard KTM 690 SMC R</div>
+            <div class="precio">7.200 €</div>
+          </div>
+          <div class="moto-card">
+            <img src="https://imgs.search.brave.com/zPtFXcgNxcKzOFDZq-tH-BC84IBwd3x5KUmgPj9ZzuI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXM1LjEwMDBwcy5u/ZXQvaW1hZ2VzX2Jp/a2VrYXQvMjAyNS80/Mi1IdXNxdmFybmEv/NzU0NC1GRV8zNTAv/MDAyLTYzODU1MTY5/MDQ5OTc2OTM4OC1o/dXNxdmFybmEtZmUt/MzUwLmpwZz9mb3Jt/YXQ9d2VicCZxdWFs/aXR5PTgwJndpZHRo/PTEyMDAmaGVpZ2h0/PTc5MCZiZ2NvbG9y/PXJnYmFfMzlfNDJf/NDRfMCZtb2RlPXBh/ZA" alt="Moto Enduro" />
+            <div>Moto Enduro Husqvarna FE 350</div>
+            <div class="precio">6.500 €</div>
+          </div>
+        </div>
       </div>
     </main>
     <footer>

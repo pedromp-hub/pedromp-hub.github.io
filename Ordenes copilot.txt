@@ -8,4 +8,8 @@
 8. Ponle la misma foto de fondo que la pagina principal.
 9. Toda la información de la pagina metela en cuadros negros.
 10. Creame otra pagina la cual se acceda pulsando en contactanos y que tenga el mismo formato que la pagina sobre nosotros.
-11.
+11. En la seccion de tipo de motos dentro en el menu desplegable creame una pagina para cada tipo con el formato de sobre nosotros y que este asociada a index.html.
+12. Elimina el apartado de logo y sustituyelo por una imagen de una moto trail.
+13. Añade en la cabecera otro apartado en el que ponga tienda y dentro que tenga el formato de las otras paginas pero que solo aparezacan fotos y precios de motos.
+14. Haz que todas las paginas esten relacionadas con todas para poder acceder a otra desde cualquiera.
+15. Deja el formato que le sale a tipo de motos en la pagina index en todas las otras paginas.

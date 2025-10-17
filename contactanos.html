@@ -33,14 +33,43 @@
     <header>
       <div class="nav">
         <div class="brand"><a href="index.html">MotoRenova</a></div>
-        <nav aria-label="principal">
-          <a href="index.html" style="margin-right:18px">Inicio</a>
-          <a href="index.html" style="margin-right:18px">Tipos de motos</a>
-          <a href="about.html" style="margin-right:18px">Sobre nosotros</a>
-          <a href="contactanos.html">Contáctanos</a>
+        <nav aria-label="menú principal">
+          <ul style="list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center;flex:1">
+            <li class="dropdown" style="position:relative;">
+              <button class="dropdown-button" aria-haspopup="true" aria-expanded="false" id="tiposButton" style="font-weight:400;letter-spacing:0.01em;background:transparent;border:none;color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:4px;text-shadow:0 2px 8px rgba(0,0,0,0.6)">Tipos de motos <span style="font-size:1.1em;line-height:1;display:inline-block;transform:translateY(1px);color:#fff">&#9660;</span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="tiposButton" style="position:absolute;top:calc(100% + 8px);left:0;min-width:160px;background:rgba(0,0,0,0.88);border-radius:8px;padding:8px 0;box-shadow:0 12px 30px rgba(0,0,0,0.45);display:none;z-index:60">
+                <li role="none"><a role="menuitem" href="trail.html">Trail</a></li>
+                <li role="none"><a role="menuitem" href="naked.html">Naked</a></li>
+                <li role="none"><a role="menuitem" href="deportiva.html">Deportiva</a></li>
+                <li role="none"><a role="menuitem" href="supermotard.html">Supermotard</a></li>
+                <li role="none"><a role="menuitem" href="enduro.html">Enduro</a></li>
+              </ul>
+            </li>
+            <li><a href="Sobrenosotros.html">Sobre nosotros</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a class="btn-cta" href="index.html">Inicio</a></li>
+          </ul>
         </nav>
       </div>
     </header>
+    <script>
+      // Dropdown 'Tipos de motos'
+      (function(){
+        const dropdown = document.querySelector('.dropdown');
+        if(!dropdown) return;
+        const btn = dropdown.querySelector('.dropdown-button');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        function open(){ dropdown.classList.add('open'); btn.setAttribute('aria-expanded','true'); menu.style.display='block'; }
+        function close(){ dropdown.classList.remove('open'); btn.setAttribute('aria-expanded','false'); menu.style.display='none'; }
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          dropdown.classList.contains('open') ? close() : open();
+        });
+        document.addEventListener('click', function(){ close(); });
+        document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape') close(); });
+      })();
+    </script>
     <main>
       <div class="content-wrap">
         <h1>Contáctanos</h1>

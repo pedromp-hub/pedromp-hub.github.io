@@ -28,14 +28,43 @@
     <header>
       <div class="nav">
         <div class="brand"><a href="index.html">MotoRenova</a></div>
-        <nav aria-label="principal">
-          <a href="index.html" style="margin-right:18px">Inicio</a>
-          <a href="index.html" style="margin-right:18px">Tipos de motos</a>
-          <a href="Sobrenosotros.html" style="margin-right:18px">Sobre nosotros</a>
-          <a href="contactanos.html">Contáctanos</a>
+        <nav aria-label="menú principal">
+          <ul style="list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center;flex:1">
+            <li class="dropdown" style="position:relative;">
+              <button class="dropdown-button" aria-haspopup="true" aria-expanded="false" id="tiposButton" style="font-weight:400;letter-spacing:0.01em;background:transparent;border:none;color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer;display:flex;align-items:center;gap:4px;text-shadow:0 2px 8px rgba(0,0,0,0.6)">Tipos de motos <span style="font-size:1.1em;line-height:1;display:inline-block;transform:translateY(1px);color:#fff">&#9660;</span></button>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="tiposButton" style="position:absolute;top:calc(100% + 8px);left:0;min-width:160px;background:rgba(0,0,0,0.88);border-radius:8px;padding:8px 0;box-shadow:0 12px 30px rgba(0,0,0,0.45);display:none;z-index:60">
+                <li role="none"><a role="menuitem" href="trail.html">Trail</a></li>
+                <li role="none"><a role="menuitem" href="naked.html">Naked</a></li>
+                <li role="none"><a role="menuitem" href="deportiva.html">Deportiva</a></li>
+                <li role="none"><a role="menuitem" href="supermotard.html">Supermotard</a></li>
+                <li role="none"><a role="menuitem" href="enduro.html">Enduro</a></li>
+              </ul>
+            </li>
+            <li><a href="Sobrenosotros.html">Sobre nosotros</a></li>
+            <li><a href="contactanos.html">Contáctanos</a></li>
+            <li><a href="tienda.html">Tienda</a></li>
+            <li><a class="btn-cta" href="index.html">Inicio</a></li>
+          </ul>
         </nav>
       </div>
     </header>
+    <script>
+      // Dropdown 'Tipos de motos'
+      (function(){
+        const dropdown = document.querySelector('.dropdown');
+        if(!dropdown) return;
+        const btn = dropdown.querySelector('.dropdown-button');
+        const menu = dropdown.querySelector('.dropdown-menu');
+        function open(){ dropdown.classList.add('open'); btn.setAttribute('aria-expanded','true'); menu.style.display='block'; }
+        function close(){ dropdown.classList.remove('open'); btn.setAttribute('aria-expanded','false'); menu.style.display='none'; }
+        btn.addEventListener('click', function(e){
+          e.stopPropagation();
+          dropdown.classList.contains('open') ? close() : open();
+        });
+        document.addEventListener('click', function(){ close(); });
+        document.addEventListener('keydown', function(ev){ if(ev.key === 'Escape') close(); });
+      })();
+    </script>
     <main>
       <div class="content-wrap">
         <h1>Motos Supermotard</h1>
@@ -57,18 +86,9 @@
         <p>Perfecta para quienes buscan diversión en ciudad y carreteras reviradas, con una moto ligera y reactiva.</p>
       </div>
       <div class="logo-wrap">
-        <h2>El logo de nuestra tienda</h2>
-        <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo MotoRenova">
-          <rect width="100%" height="100%" fill="#000" rx="12" />
-          <g transform="translate(20,18) scale(0.9)" fill="#fff">
-            <path d="M90 18 C110 10, 150 12, 168 34 C182 52, 180 66, 168 78 C156 90, 130 92, 110 86 C88 80, 80 60, 90 48 C98 38, 110 28, 90 18 Z" />
-            <circle cx="34" cy="130" r="34" />
-            <circle cx="156" cy="130" r="34" />
-            <rect x="12" y="170" width="196" height="4" fill="#222" opacity="0.35" />
-            <rect x="12" y="182" width="196" height="4" fill="#222" opacity="0.35" />
-          </g>
-        </svg>
-        <p style="margin-top:12px;color:rgba(255,255,255,0.72)">Puedes descargarlo haciendo clic derecho sobre la imagen y seleccionando "Guardar imagen como..."</p>
+        <h2>Ejemplo de moto Supermotard</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/2007_Suzuki_DRZ-400SM.jpg" alt="Moto Supermotard" style="width:220px;height:auto;border-radius:10px;box-shadow:0 4px 24px rgba(0,0,0,0.45);margin-bottom:8px;" />
+        <p style="margin-top:12px;color:rgba(255,255,255,0.72)">Imagen ilustrativa de una moto supermotard.</p>
       </div>
       </div>
     </main>
