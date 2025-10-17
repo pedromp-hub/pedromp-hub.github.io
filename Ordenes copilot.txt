@@ -7,3 +7,5 @@
 7. Cuando pinche en la parte de sobre nosotros acceda a otra pagina en la que explique quienes somos que hacemos y en la parte baja me crees un logo para mi tienda.
 8. Ponle la misma foto de fondo que la pagina principal.
 9. Toda la información de la pagina metela en cuadros negros.
+10. Creame otra pagina la cual se acceda pulsando en contactanos y que tenga el mismo formato que la pagina sobre nosotros.
+11.
