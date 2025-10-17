@@ -13,3 +13,4 @@
 13. Añade en la cabecera otro apartado en el que ponga tienda y dentro que tenga el formato de las otras paginas pero que solo aparezacan fotos y precios de motos.
 14. Haz que todas las paginas esten relacionadas con todas para poder acceder a otra desde cualquiera.
 15. Deja el formato que le sale a tipo de motos en la pagina index en todas las otras paginas.
+16. Cuando pulsas ver modelos te acceda a la tienda.
